@@ -7,16 +7,16 @@ phases:
     commands:
       - echo Installing NPM dependencies...
       - npm install
-  pre-build:
+  pre_build: # Boa prática usar underscore aqui também, embora o hífen seja aceito
     commands:
       - echo Pre-build phase
   build:
-    command:
+    commands:   # <-- CORREÇÃO: 'commands' no plural
       - echo Build phase
-  post-build:
-    command:
-      - echo Build completed on 'date'
+  post_build: # <-- CORREÇÃO: 'post_build' com underscore
+    commands:   # <-- CORREÇÃO: 'commands' no plural
+      - echo Build completed on `date`
 
 artifacts:
   files:
-    - '**/*'   #Inclui todos os arquivos e subpastas recursivamente
+    - '**/*'    # Inclui todos os arquivos e subpastas recursivamente
